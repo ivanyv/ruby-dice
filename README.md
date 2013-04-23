@@ -17,7 +17,7 @@ Needs the `xsel` program to copy passphrases to the clipboard.
 
 ## Usage
 
-    $ gem install ruby-dice
+    $ gem install ruby-diceware
     $ dice help throw
 
 ## Custom wordlists
