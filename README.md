@@ -11,6 +11,10 @@ Hope someone finds this useful and let me know what stupid security mistakes I'v
     $ gem install ruby-dice
     $ dice --help
 
+## To do
+
+* Find way to handle non UTF-8 wordlist files.
+
 ## Credits
 
 Default wordlist taken from:
