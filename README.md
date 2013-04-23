@@ -10,3 +10,9 @@ Hope someone finds this useful and let me know what stupid security mistakes I'v
 
     $ gem install ruby-dice
     $ dice --help
+
+## Credits
+
+Default wordlist taken from:
+
+    http://world.std.com/~reinhold/diceware.html
