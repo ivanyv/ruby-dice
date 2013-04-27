@@ -8,7 +8,17 @@ module RubyDice
       wordlist_options[:wordlist] = options.delete(:wordlist)
 
       wordlist = Wordlist.new(wordlist_options)
-      wordlist.random(options[:words]).join(' ')
+      words = wordlist.random(options[:words])
+
+      if options[:camelcase]
+        words.map!(&:capitalize)
+        words[0] = words[0].downcase
+        phrase = words.join
+      else
+        phrase = words.join(' ')
+      end
+
+      phrase
     end
   end
 end

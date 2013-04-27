@@ -11,6 +11,14 @@ describe RubyDice::Passphrase do
     passphrase = RubyDice::Passphrase.generate(wordlist: file)
     passphrase.split(' ').size.should eql(5)
   end
+
+  it 'returns a camel cased passphrase' do
+    words = %w[mary had a little lamb]
+    camel = 'maryHadALittleLamb'
+    RubyDice::Wordlist.any_instance.stub(:random).and_return(words)
+    passphrase = RubyDice::Passphrase.generate(camelcase: true)
+    passphrase.should eql(camel)
+  end
 end
 
 describe RubyDice::Wordlist do
