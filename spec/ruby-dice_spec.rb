@@ -19,6 +19,14 @@ describe RubyDice::Passphrase do
     passphrase = RubyDice::Passphrase.generate(camelcase: true)
     passphrase.should eql(camel)
   end
+
+  it 'returns a passphrase with a number' do
+    words = %w[mary had a little lamb]
+    with_number = /mary had a little lamb\d+/
+    RubyDice::Wordlist.any_instance.stub(:random).and_return(words)
+    passphrase = RubyDice::Passphrase.generate(numbers: true)
+    passphrase.should =~ with_number
+  end
 end
 
 describe RubyDice::Wordlist do
